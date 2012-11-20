@@ -31,14 +31,14 @@ describe("Tests the conversion of formatted time into a numeric milliseconds val
 describe("Tests the reading of a line with subtitle times on it and extracts the times", function() {
   it("has a starting time and an ending time", function() {
     var lineOfFile = "00:10:06,123 --> 00:10:25,543";
-    var startTimeMilliseconds = 606123;
-    var endTimeMilliseconds = 625543;
+    var startTimeMilliseconds = "00:10:06,123";
+    var endTimeMilliseconds = "00:10:25,543";
 
     var timeLine = {startTime: startTimeMilliseconds, endTime: endTimeMilliseconds};
 
     var result = getTimesFromLine(lineOfFile);
 
-    expect(result[startTime].toEqual(startTimeMilliseconds));
-    expect(result[endTime].toEqual(endTimeMilliseconds));   
+    expect(result.startTime).toEqual(timeLine.startTime);
+    expect(result.endTime).toEqual(timeLine.endTime);
   });
 });

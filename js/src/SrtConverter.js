@@ -14,5 +14,6 @@ function convertToMilliseconds(stringTime) {
 };
 
 function getTimesFromLine(line) {
-	return null;
+	var startAndEndTime = line.split("-->");
+    return {startTime: startAndEndTime[0].trim(), endTime: startAndEndTime[1].trim()};
 };
